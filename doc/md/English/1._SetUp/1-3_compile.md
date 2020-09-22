@@ -70,6 +70,7 @@ are necessary for successful compilation with `NetCDF`. In particular,
 the `netcdf.mod` file must be created by the same Fortran compiler as
 `OpenSWPC`. If `NetCDF` is installed using packaging tools such as
 `yum, apt`, or `homebrew`, the use of `gfortran` is implicitly assumed.
+In `conda` environment using `gfortran`(`mpif90`), `openmpi`, and `NetCDF`, modify variables for `mac-gfortran` as `NCLIB = -L/opt/anaconda3/envs/env-name/lib` and `NCINC = -I/opt/anaconda3/envs/env-name/include` in `src/shared/makefile.arch` and `src/shared/makefile-tools.arch`.
 
 ## Parameters embedded in the source code
 
