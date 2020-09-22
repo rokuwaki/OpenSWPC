@@ -66,6 +66,7 @@ make arch=eic debug=true
 ライブラリの拡張子は`*.a`（static）の場合と`*.so`（dynamic）の場合がある．
 また，Fortran90の仕様により，`NetCDF.mod`はのコンパイルと同じコンパイラにより作成されていなければならない．
 特にLinux環境等において，`yum, apt, brew`等のパッケージ管理システムにより導入した`NetCDF`では，`gfortran`以外のコンパイラを用いることができない．そのような場合は，別の場所に用の`NetCDF`を自力でコンパイルする必要がある．
+`conda`による仮想環境において`gfortran`(`mpif90`)，`openmpi`，`NetCDF`を利用する場合は，`src/shared/makefile.arch`と`src/shared/makefile-tools.arch`の`mac-gfortran`における変数を`NCLIB = -L/opt/anaconda3/envs/env-name/lib`，`NCINC = -I/opt/anaconda3/envs/env-name/include`に変更する．
 
 ## 埋め込みパラメータの調整
 
